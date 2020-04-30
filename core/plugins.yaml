@@ -6,16 +6,17 @@
 # Editor UI{{{
 - repo: ryanoasis/vim-devicons
 
-- repo: hardcoreplayers/spaceline.vim
+- repo: Andrflor/spaceline.vim
   on_event: [ BufReadPre,BufNew ]
   hook_source:
-    let g:spaceline_seperate_style= 'slant-cons'
+    let g:spaceline_seperate_style= 'slant-fade'
 
 - repo: hardcoreplayers/vim-buffet
   on_event: [ BufReadPre, BufNew ]
 
 - repo: mhinz/vim-startify
   hook_add: source  $VIM_PATH/modules/module-startify.vim
+  hook_source: let g:startify_padding_left = 40
   hook_post_source: |
       function! StartifyEntryFormat()
         return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
@@ -183,7 +184,7 @@
       \ 'Unknown'   : '⁇'
       \ }
 
-- repo: kristijanhusak/defx-icons
+- repo: Andrflor/defx-icons
   on_source: defx.nvim
   hook_add: |
     let g:defx_icons_column_length = 1
@@ -310,3 +311,38 @@
 - repo: kana/vim-textobj-function
   on_map: { ox: <Plug> }
   hook_add: let g:textobj_function_no_default_key_mappings = 1
+
+- { repo: noscript/cSyntaxAfter }
+
+# Javascript and React support
+# LanguageServerProtocol use coc-tsserver extensions
+- { repo: neoclide/vim-jsx-improve,on_ft: [ javascript,javascriptreact ]}
+- { repo: moll/vim-node, on_ft: [ javascript, javascriptreact ] }
+- { repo: jparise/vim-graphql, on_ft: [ javascript, javascriptreact ] }
+
+# Typescript and React support
+# LanguageServerProtocol used by coc-tsserver
+- { repo: leafgarland/typescript-vim,on_ft: [ typescript, typescriptreact ]}
+- { repo: peitalin/vim-jsx-typescript,on_ft: [typescriptreact ]}
+
+# json support
+# LanguageServerProtocol for json by thinkvim default
+- { repo: elzr/vim-json, on_ft: json }
+
+# Go Debug support
+# LanguageServerProtocol used by gopls
+- { repo : hardcoreplayers/go-nvim,on_ft: [ go ,gomod ]}
+- { repo: sebdah/vim-delve,on_ft: go }
+
+# Rust support
+# LanguageServerProtocol used by coc-rust-analyzer extension
+- { repo: rust-lang/rust.vim,on_ft: rust }
+
+# Kotlin support
+- { repo: Andrflor/kotlin-vim, on_ft: kotlin }
+
+# Qml support
+- { repo: peterhoeg/vim-qml, on_ft: qml }
+
+# Java support
+- { repo: artur-shaik/vim-javacomplete2, on_ft: [java, class] }

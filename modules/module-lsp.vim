@@ -138,3 +138,14 @@ endif
 if dein#tap('vim-vue')
     call coc#add_extension('coc-vetur')
 endif
+
+"kotlin lsp config
+if dein#tap('kotlin-vim')
+  call coc#add_extension('coc-java')
+  call coc#config('languageserver', {
+  \ 'kotlin': {
+    \ "command": "/usr/share/kotlin/kotlin-language-server/bin/kotlin-language-server",
+    \ "filetypes": ["kotlin"]
+    \ }
+    \})
+endif
