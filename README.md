@@ -39,16 +39,16 @@ sh bin/install.sh
 
 ## Quick Start
 
-Check the [thinkvim wiki](https://github.com/hardcoreplayers/ThinkVim/wiki) page or docs folder.
+Check the [envyvim wiki](https://github.com/hardcoreplayers/ThinkVim/wiki) page or docs folder.
 
 ## Feedback
 
-- ask on [![Gitter](https://badges.gitter.im/thinkvim/Thinkvim.svg)](https://gitter.im/thinkvim/Thinkvim?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-- 中文频道 [![Gitter](https://badges.gitter.im/thinkvim/community.svg)](https://gitter.im/thinkvim/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+- ask on [![Gitter](https://badges.gitter.im/envyvim/Envyvim.svg)](https://gitter.im/envyvim/Envyvim?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+- 中文频道 [![Gitter](https://badges.gitter.im/envyvim/community.svg)](https://gitter.im/envyvim/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Backers
 
-Do you like ThinkVim? keep it alive by [donating funds](https://salt.bountysource.com/teams/thinkvim-taigacute)😘!
+Do you like ThinkVim? keep it alive by [donating funds](https://salt.bountysource.com/teams/envyvim-taigacute)😘!
 
 <a href="https://github.com/emeentag" target="_blank" title="emeentag">
   <img src="https://github.com/emeentag.png?size=64" width="64" height="64" alt="emeentag">

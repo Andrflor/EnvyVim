@@ -1,4 +1,4 @@
-module github.com/hardcoreplayers/Thinkvim
+module github.com/hardcoreplayers/Envyvim
 
 go 1.14
 

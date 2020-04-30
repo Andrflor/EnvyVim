@@ -29,7 +29,7 @@ func main() {
 }
 
 func writeuserplugins(wg *sync.WaitGroup, filename string) {
-	userplugins := homepath + "/.thinkvim.d/plugins.yaml"
+	userplugins := homepath + "/.config/envyvim/plugins.yaml"
 	mu := sync.RWMutex{}
 	mu.RLock()
 	f, err := os.OpenFile(userplugins, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)

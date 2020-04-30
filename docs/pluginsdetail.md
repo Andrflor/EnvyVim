@@ -80,7 +80,7 @@
 | [coc-html](https://github.com/neoclide/coc-html)                      | html                                                          |
 | [coc-css](https://github.com/neoclide/coc-css)                        | css                                                           |
 | [coc-tsserver](https://github.com/neoclide/coc-tsserver)              | javascript typescript languageserver                          |
-| [coc-python](https://github.com/neoclide/coc-python)                  | Python Languageserver mpls or pls Defalut is mpls on thinkvim |
+| [coc-python](https://github.com/neoclide/coc-python)                  | Python Languageserver mpls or pls Defalut is mpls on envyvim |
 | [coc-json](https://github.com/neoclide/coc-json)                      | json Languageserver                                           |
 | [coc-vetur](https://github.com/neoclide/coc-vetur)                    | vue langserver                                                |
 | [coc-yaml](https://github.com/neoclide/coc-yaml)                      | yaml langserver                                               |

@@ -710,13 +710,13 @@ endfunction
 
 function! s:load_keybinds(plugins) abort
   let pmap = copy(a:plugins)
-  while g:thinkvim_disable_mappings
+  while g:envyvim_disable_mappings
     return
   endwhile
-  if empty(g:thinkvim_disable_pmaping)
+  if empty(g:envyvim_disable_pmaping)
     call s:load_plugins_keybinds(pmap)
   else
-    for i in g:thinkvim_disable_pmaping
+    for i in g:envyvim_disable_pmaping
       if index(values(pmap),i) >= 0
         let key = s:get_key(i, pmap)
         call remove(pmap,key)

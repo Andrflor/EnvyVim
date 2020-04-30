@@ -1,6 +1,6 @@
 ## User Custom
 
-Thinkvim will generate `.thinkvim.d` folder under your home path,This folder
+Envyvim will generate `.config/envyvim` folder under your home path,This folder
 will has two files `plugins.yaml` and `init.vim`
 
 ## Custom leaderkey and localleader key
@@ -16,7 +16,7 @@ let g:maplocalleader
 
 I suggest that most of plugins should lazyload by dein ,There has two ways to install plugins.
 
-- if you are a vim begginer or you want to follow master branch,you should use `plugins.yaml`. like you want use choosewin plugin,you can installed it in `plugins.yaml`(notice thinkvim has installed ,just for example)
+- if you are a vim begginer or you want to follow master branch,you should use `plugins.yaml`. like you want use choosewin plugin,you can installed it in `plugins.yaml`(notice envyvim has installed ,just for example)
 
 ```yaml
 - repo: t9md/vim-choosewin
@@ -71,11 +71,11 @@ let g:which_key_map.F='test'
 ```
 
 - if you edit the plugins.yaml ,it doesn't work. you can try to recache the cache. use this function `call dein#recache_runtimepath()`
-- you can check [my .thinkvim.d](https://github.com/taigacute/dotfiles/tree/master/thinkvim) for more usage.
+- you can check [my .config/envyvim](https://github.com/taigacute/dotfiles/tree/master/envyvim) for more usage.
 
 ## change colorscheme
 
-- ThinkVim provide a easy way to change colorscheme, use this keymap `Leader+tc` then thinkvim will write the colorscheme that your choose into cache file,ThinkVim will read this file to load colorscheme when next startup
+- ThinkVim provide a easy way to change colorscheme, use this keymap `Leader+tc` then envyvim will write the colorscheme that your choose into cache file,ThinkVim will read this file to load colorscheme when next startup
 
 - Add your favorite coloscheme file into colors folder
 
@@ -103,8 +103,8 @@ let s:footer = [
       \ '',
       \ ]
 
-let g:startify_custom_header = Thinkvim_startify_center(s:header)
-let g:startify_custom_header = Thinkvim_startify_center(s:footer)
+let g:startify_custom_header = Envyvim_startify_center(s:header)
+let g:startify_custom_header = Envyvim_startify_center(s:footer)
 
 ```
 
@@ -114,12 +114,12 @@ let g:startify_custom_header = Thinkvim_startify_center(s:footer)
 
 ```viml
 " disable all keymaps of plugins
-let g:thinkvim_disable_mappings = 0
+let g:envyvim_disable_mappings = 0
 " disable some plugins keymap is a list
-let g:thinkvim_disable_pmaping = []
+let g:envyvim_disable_pmaping = []
 ```
 
-The value of `thinkvim_disable_pmaping` are
+The value of `envyvim_disable_pmaping` are
 
 ```
 plugins:
@@ -139,7 +139,7 @@ insert command quiet window session toggle normal
 eg:
 
 ```viml
-let g:thinkvim_disable_pmaping = ['dein.vim','insert'....]
+let g:envyvim_disable_pmaping = ['dein.vim','insert'....]
 ```
 
 Why add this support, Because vim is free, and key mapping everyone has everyone's habits, so we can't bundle them, it should be customized by the user. more information on this issue https://github.com/hardcoreplayers/ThinkVim/issues/105.
@@ -148,7 +148,7 @@ Why add this support, Because vim is free, and key mapping everyone has everyone
 
 - Go use gopls (need user install)
 - C C++ OC use ccls (need user install)
-- Python support `coc-python`,When install thinkvim if you choose python,when open python file it will auto install mpls.
+- Python support `coc-python`,When install envyvim if you choose python,when open python file it will auto install mpls.
 - Dockerfile use docker-langserver (need user install)
 - Haskell use https://github.com/haskell/haskell-ide-engine (need user install)
 - Lua use lua-lsp (need user install)

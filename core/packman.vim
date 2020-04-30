@@ -31,7 +31,7 @@ let s:config_paths = get(g:, 'etc_config_paths', [
 	\ $VIM_PATH . '/vimrc.json',
 	\ ])
 
-let s:user_plugins=expand($HOME.'/.thinkvim.d/plugins.yaml')
+let s:user_plugins=expand($HOME.'/.config/envyvim/plugins.yaml')
 
 function! s:load_plugins(plugin_files)
 	" check the user plugins

@@ -1,5 +1,5 @@
-let s:user_init_vim = expand($HOME . '/.thinkvim.d/init.vim')
-let s:user_plugins = expand($HOME . '/.thinkvim.d/plugins.yaml')
+let s:user_init_vim = expand($HOME . '/.config/envyvim/init.vim')
+let s:user_plugins = expand($HOME . '/.config/envyvim/plugins.yaml')
 let s:user_zshrc = expand($HOME . '/.zshrc')
 let s:user_tmux_conf = expand($HOME . '/.tmux.conf')
 

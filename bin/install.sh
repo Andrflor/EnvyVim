@@ -3,34 +3,34 @@
 source ./bin/format.sh
 source ./bin/pynvim.sh
 
-thinkvim_personal="$HOME/.thinkvim.d"
+envyvim_personal="$HOME/.config/envyvim"
 generator="$HOME/.config/nvim/bin/generator"
 
-action "Create .thinkvim.d "
+action "Create .config/envyvim "
 
-function ensureThinkvimd(){
-  if [ ! -d "$thinkvim_personal" ]
+function ensureEnvyvimConfig(){
+  if [ ! -d "$envyvim_personal" ]
   then
-    mkdir -p $HOME/.thinkvim.d
-    ok "create .thinkvim.d folder success"
+    mkdir -p $HOME/.config/envyvim
+    ok "create .config/envyvim folder success"
   else
-    warn "the .thinkvim.d folder exist skipped"
+    warn "the .config/envyvim folder exist skipped"
   fi
 
-  cd ~/.thinkvim.d/
+  cd ~/.config/envyvim/
 
   if [ ! -f init.vim ]
   then
     touch init.vim
-    ok "create .thinkvim.d/init.vim success"
+    ok "create .config/envyvim/init.vim success"
   else
-    warn "the .thinkvim.d/init.vim exist skipped"
+    warn "the .config/envyvim/init.vim exist skipped"
   fi
 
   if [ ! -f plugins.yaml ]
   then
     touch plugins.yaml
-    ok "create .thinkvim.d/plugins.yaml success"
+    ok "create .config/envyvim/plugins.yaml success"
     cd -
     cd $HOME/.config/nvim/
     if [ ! -f $generator ]
@@ -45,11 +45,11 @@ function ensureThinkvimd(){
     fi
     cd -
   else
-    warn "the .thinkvim.d/plugns.yaml exist skipped"
+    warn "the .config/envyvim/plugns.yaml exist skipped"
   fi
 }
 
-ensureThinkvimd
+ensureEnvyvimConfig
 
 action "Checking node and yarn..."
 
@@ -125,7 +125,7 @@ cd ~/.config/coc/extensions
 if [ ! -f package.json ]
 then
   echo '{"dependencies":{}}'> package.json
-  running "Installing extensions...If you live in China,npm is very slow.\n
+  running "Installing extensions...\n
   you may need to config npm to use taobao or cnpm\n"
   npm install coc-html --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
   npm install coc-css --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
@@ -149,14 +149,22 @@ then
   npm install coc-explorer --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
   npm install coc-actions --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
   npm install coc-db --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+  npm install coc-sh --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+  npm install coc-docker --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+  npm install coc-java --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+  npm install coc-clangd --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+  npm install coc-python --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+  npm install coc-angular --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+  npm install coc-spellchecker --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+  npm install coc-marketplace --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
   ok "===>install all extensions success"
 else
   warn "pakcages.json file exist,skipped install coc-extensions"
 fi
 
 ok "\n
-Congratulations thinkvim install success!!!\n
+Congratulations envyvim install success!!!\n
 Install your favorite font on here https://www.nerdfonts.com/font-downloads\n
 If you use linux,you need install ctags with janson support.\n
-Install the Lsp for your languages.\n
-Thanks for you love this neovim config."
+For more languages support install the Lsp for your languages.\n
+Have fun ﴣ \n
