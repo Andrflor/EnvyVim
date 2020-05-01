@@ -167,4 +167,4 @@ Congratulations envyvim install success!!!\n
 Install your favorite font on here https://www.nerdfonts.com/font-downloads\n
 If you use linux,you need install ctags with janson support.\n
 For more languages support install the Lsp for your languages.\n
-Have fun ﴣ \n
+Have fun ﴣ"
