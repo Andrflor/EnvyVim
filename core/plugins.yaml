@@ -314,6 +314,8 @@
 
 - { repo: noscript/cSyntaxAfter }
 
+- { repo: airblade/vim-rooter, hook_source: let g:rooter_silent_chdir = 1 }
+
 # Javascript and React support
 # LanguageServerProtocol use coc-tsserver extensions
 - { repo: neoclide/vim-jsx-improve,on_ft: [ javascript,javascriptreact ]}
