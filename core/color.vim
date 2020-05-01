@@ -8,7 +8,7 @@ hi SignColumn ctermfg=187 ctermbg=NONE guifg=#ebdbb2 guibg=NONE guisp=NONE cterm
 "Pmenu Colors
 " ---------------------------------------------------------
 " hi PMenuSel ctermfg=252 ctermbg=106 guifg=#d0d0d0 guibg=#ba8baf guisp=#ba8baf cterm=NONE gui=NONE
-hi Pmenu ctermfg=103 ctermbg=236 guifg=#9a9aba guibg=#34323e guisp=NONE cterm=NONE gui=NONE
+hi Pmenu ctermfg=103 ctermbg=236 guifg=#9a9aba guibg=#1f2535 guisp=NONE cterm=NONE gui=NONE
 hi PmenuSbar ctermfg=NONE ctermbg=234 guifg=NONE guibg=#212026 guisp=NONE cterm=NONE gui=NONE
 hi PmenuSel ctermfg=NONE ctermbg=60 guifg=NONE guibg=#5e5079 guisp=NONE cterm=NONE gui=NONE
 hi PmenuThumb ctermfg=NONE ctermbg=60 guifg=NONE guibg=#5d4d7a guisp=NONE cterm=NONE gui=NONE
@@ -44,8 +44,8 @@ highlight def link Defx_filename_3_Unmerged Label
 
 " WhichKey Highlight
 " ---------------------------------------------------------
-hi WhichKeyDesc guifg=#d7af00  ctermfg=178 guibg=NONE ctermbg=NONE
-hi WhichKey  guifg=#5fafd7 ctermfg=74
+hi WhichKeyDesc guifg=#ffcb6b  ctermfg=178 guibg=NONE ctermbg=NONE
+hi WhichKey  guifg=#89ddff ctermfg=74
 
 " Normal Highlight
 " ---------------------------------------------------------
@@ -56,3 +56,7 @@ hi Normal guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+let g:rainbow_conf = {
+\	'guifgs': ['#89ddff', '#ff5370', '#ffcb6b' , '#c792ea', '#c3e88d'],
+\ }

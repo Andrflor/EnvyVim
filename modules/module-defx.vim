@@ -132,7 +132,7 @@ function! s:defx_mappings() abort
 
 	" Selection
 	nnoremap <silent><buffer><expr> *  defx#do_action('toggle_select_all')
-	nnoremap <silent><buffer><expr><nowait> <Space>
+	nnoremap <silent><buffer><expr><nowait> '
 		\ defx#do_action('toggle_select') . 'j'
 
 	nnoremap <silent><buffer><expr> S  defx#do_action('toggle_sort', 'Time')

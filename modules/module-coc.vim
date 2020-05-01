@@ -17,8 +17,9 @@ augroup END
 
 let g:coc_snippet_next = '<TAB>'
 let g:coc_snippet_prev = '<S-TAB>'
-let g:coc_status_error_sign = '•'
-let g:coc_status_warning_sign = '•'
+let g:coc_status_error_sign = ' '
+let g:coc_status_warning_sign = ' '
+let g:coc_status_info_sign = ' ',
 let g:coc_global_extensions =[
     \ 'coc-html',
     \ 'coc-css',

@@ -346,3 +346,6 @@
 
 # Java support
 - { repo: artur-shaik/vim-javacomplete2, on_ft: [java, class] }
+
+# Plalenight colorscheme
+- repo: drewtempelmeyer/palenight.vim

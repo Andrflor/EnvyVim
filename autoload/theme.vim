@@ -2,7 +2,7 @@
 
 function! theme#init()
 	" Load cached colorscheme or hybrid by default
-	let l:default = 'twodark'
+	let l:default = 'palenight'
 	let l:cache = s:theme_cache_file()
 	if ! exists('g:colors_name')
 		set background=dark
