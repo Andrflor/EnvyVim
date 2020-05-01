@@ -83,6 +83,7 @@ function! s:defx_mappings() abort
 
 
 	nnoremap <silent><buffer><expr> <CR>  defx#do_action('drop')
+	nnoremap <silent><buffer><expr> <2-LeftMouse> defx#do_action('drop')
 	nnoremap <silent><buffer><expr> l     <SID>defx_toggle_tree()
 	nnoremap <silent><buffer><expr> h     defx#async_action('cd', ['..'])
 	nnoremap <silent><buffer><expr> st    defx#do_action('multi', [['drop', 'tabnew'], 'quit'])

@@ -39,6 +39,8 @@ endfunction
 let g:startify_custom_header = Envyvim_startify_center(s:header)
 let g:startify_custom_footer = Envyvim_startify_center(s:footer)
 
+
+autocmd VimEnter * if isdirectory(argv()[0]) | exe 'Startify' | endif
 autocmd! FileType startify
 autocmd  FileType startify set laststatus=0 showtabline=0
   \| autocmd BufLeave <buffer> set laststatus=2 showtabline=2
