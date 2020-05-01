@@ -15,8 +15,8 @@
   on_event: [ BufReadPre, BufNew ]
 
 - repo: mhinz/vim-startify
+  branch: center
   hook_add: source  $VIM_PATH/modules/module-startify.vim
-  hook_source: let g:startify_padding_left = 40
   hook_post_source: |
       function! StartifyEntryFormat()
         return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
