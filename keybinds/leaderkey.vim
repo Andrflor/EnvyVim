@@ -26,7 +26,7 @@ function! s:load_dein() abort
     nnoremap <silent> <Leader>pl  :echo dein#get_updates_log()<CR>
     let g:which_key_map.p = { 'name': '+plugin'}
     let g:which_key_map.p.u = 'update all plugins'
-    let g:which_key_map.p.r = 'reache runtime path'
+    let g:which_key_map.p.r = 'recache runtime path'
     let g:which_key_map.p.l = 'plugins update log'
   endif
 endfunction
@@ -39,6 +39,18 @@ function! s:load_buffet() abort
     nmap <C-x>b :<C-u>bd<CR>
     nnoremap <silent> <Leader>bc :Bonly<CR>
     nnoremap <silent> <Leader>bx :Bw<CR>
+    nnoremap <silent> <M-q> :bd<CR>
+    nnoremap <silent> <M-f> :Bonly<CR>
+    nmap <silent> <leader>q1 <Plug>BuffetSwitch(1) <C-u>:bd<CR>
+    nmap <silent> <leader>q2 <Plug>BuffetSwitch(2) <C-u>:bd<CR>
+    nmap <silent> <leader>q3 <Plug>BuffetSwitch(3) <C-u>:bd<CR>
+    nmap <silent> <leader>q4 <Plug>BuffetSwitch(4) <C-u>:bd<CR>
+    nmap <silent> <leader>q5 <Plug>BuffetSwitch(5) <C-u>:bd<CR>
+    nmap <silent> <leader>q6 <Plug>BuffetSwitch(6) <C-u>:bd<CR>
+    nmap <silent> <leader>q7 <Plug>BuffetSwitch(7) <C-u>:bd<CR>
+    nmap <silent> <leader>q8 <Plug>BuffetSwitch(8) <C-u>:bd<CR>
+    nmap <silent> <leader>q9 <Plug>BuffetSwitch(9) <C-u>:bd<CR>
+    nmap <silent> <leader>q0 <Plug>BuffetSwitch(10) <C-u>:bd<CR>
     nmap <leader>1 <Plug>BuffetSwitch(1)
     nmap <leader>2 <Plug>BuffetSwitch(2)
     nmap <leader>3 <Plug>BuffetSwitch(3)
@@ -51,6 +63,16 @@ function! s:load_buffet() abort
     nmap <leader>0 <Plug>BuffetSwitch(10)
     let g:which_key_map.b.c = 'keep current buffer'
     let g:which_key_map.b.x = 'remove all buffers'
+    let g:which_key_map.q.1 = 'delete window-1'
+    let g:which_key_map.q.2 = 'delete window-2'
+    let g:which_key_map.q.3 = 'delete window-3'
+    let g:which_key_map.q.4 = 'delete window-4'
+    let g:which_key_map.q.5 = 'delete window-5'
+    let g:which_key_map.q.6 = 'delete window-6'
+    let g:which_key_map.q.7 = 'delete window-7'
+    let g:which_key_map.q.8 = 'delete window-8'
+    let g:which_key_map.q.9 = 'delete window-9'
+    let g:which_key_map.q.0 = 'delete window-10'
     let g:which_key_map.1 = 'select window-1'
     let g:which_key_map.2 = 'select window-2'
     let g:which_key_map.3 = 'select window-3'
@@ -195,9 +217,6 @@ function! s:load_coc() abort
     nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
     " Use <TAB> for selections ranges.
     " NOTE: Requires 'textDocument/selectionRange' support from the language server.
-    " coc-tsserver, coc-python are the examples of servers that support it.
-    nmap <silent> <TAB> <Plug>(coc-range-select)
-    xmap <silent> <TAB> <Plug>(coc-range-select)
     " Add `:OR` command for organize imports of the current buffer.
     command! -nargs=0 OR  :call CocAction('runCommand', 'editor.action.organizeImport')
     nnoremap <silent> <Leader>co :<C-u>OR<CR>
@@ -318,14 +337,16 @@ endfunction
 function! s:load_fugitive() abort
   if dein#tap('vim-fugitive')
     nnoremap <silent> <Leader>ga :Git add %:p<CR>
-    nnoremap <silent> <Leader>gd :Gdiffsplit<CR>
+    nnoremap <silent> <Leader>gv :Gdiffsplit<CR>
+    nnoremap <silent> <Leader>gd :Gdiffsplit!<CR>
     nnoremap <silent> <Leader>gc :Git commit<CR>
     nnoremap <silent> <Leader>gb :Git blame<CR>
     nnoremap <silent> <Leader>gf :Gfetch<CR>
     nnoremap <silent> <Leader>gs :Git<CR>
     nnoremap <silent> <Leader>gp :Gpush<CR>
     let g:which_key_map.g.a = 'git add'
-    let g:which_key_map.g.d = 'git diff split'
+    let g:which_key_map.g.d = 'git 3 way diff split'
+    let g:which_key_map.g.v = 'git diff split'
     let g:which_key_map.g.b = 'git blame'
     let g:which_key_map.g.f = 'git fetch'
     let g:which_key_map.g.c = 'git commit'
@@ -615,10 +636,10 @@ endfunction
 
 function! s:load_windowmap() abort
   "switch windw
-  nnoremap <C-h> <C-w>h
-  nnoremap <C-l> <C-w>l
-  nnoremap <C-j> <C-w>j
-  nnoremap <C-k> <C-w>k
+  nnoremap <M-h> <C-w>h
+  nnoremap <M-l> <C-w>l
+  nnoremap <M-j> <C-w>j
+  nnoremap <M-k> <C-w>k
   " window
   nnoremap <Leader><TAB> <C-O><CR>
   nnoremap <leader>ws :<C-u>sp<CR>

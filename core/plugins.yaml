@@ -6,38 +6,57 @@
 # Editor UI{{{
 - repo: ryanoasis/vim-devicons
 
-- repo: Andrflor/spaceline.vim
-  on_event: [ BufReadPre,BufNew ]
-  hook_source:
-    let g:spaceline_seperate_style= 'slant-fade'
+- repo: glepnir/spaceline.vim
+  on_event: [BufReadPre, BufNew]
+  hook_source: let g:spaceline_seperate_style= 'slant-fade'
 
-- repo: hardcoreplayers/vim-buffet
-  on_event: [ BufReadPre, BufNew ]
+# TODO: check correct setup and keybindings
+# TODO: get tags working
+- repo: tpope/vim-surround
+- repo: tpope/vim-repeat
+- repo: tpope/vim-sleuth
+- repo: moll/vim-bbye
+- repo: mbbill/undotree
+- repo: preservim/tagbar
+- repo: sheerun/vim-polyglot
+- repo: wesQ3/vim-windowswap
+- repo: psliwka/vim-smoothie
+- repo: brooth/far.vim
+- repo: ludovicchabant/vim-gutentags
+- repo: wellle/targets.vim
+
+- repo: rhysd/git-messenger.vim
+  lazy : 1,
+  on_cmd : GitMessenger,
+  on_map : { n : <Plug>(git-messenger }
 
 - repo: mhinz/vim-startify
   branch: center
   hook_add: source  $VIM_PATH/modules/module-startify.vim
   hook_post_source: |
-      function! StartifyEntryFormat()
-        return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-      endfunction
+    function! StartifyEntryFormat()
+      return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+    endfunction
 #}}}
+
+- repo: Andrflor/vim-buffet
+  on_event: [BufReadPre, BufNew]
 
 # Completion{{{
 - repo: neoclide/coc.nvim
   merge: 0
-  build: 'yarn install --frozen-lockfile'
+  build: "yarn install --frozen-lockfile"
   hook_add: source  $VIM_PATH/modules/module-coc.vim
   hook_source: source $VIM_PATH/modules/module-lsp.vim
 
 - repo: honza/vim-snippets
-  depends : coc.nvim
+  depends: coc.nvim
 
 # }}}
 
 # FileType{{{
 - repo: Shougo/context_filetype.vim
-  on_event: [ BufReadPre, BufNew ]
+  on_event: [BufReadPre, BufNew]
 
 - { repo: MTDL9/vim-log-highlighting, on_ft: log }
 - repo: plasticboy/vim-markdown
@@ -75,10 +94,10 @@
     let g:gfm_syntax_enable_filetypes = ['markdown']
 
 - repo: iamcco/markdown-preview.nvim
-  on_ft: [markdown,pandoc.markdown,rmd]
+  on_ft: [markdown, pandoc.markdown, rmd]
   build: 'sh -c "cd app & yarn install"'
   hook_source: |
-      let g:mkdp_auto_start = 0
+    let g:mkdp_auto_start = 0
 # }}}
 
 # Code{{{
@@ -91,17 +110,17 @@
   if: "has('mac')"
   on_map: { n: <Plug> }
   hook_source: |
-      let g:dash_map = {
-        \ 'javascript': ['javascript', 'NodeJS'],
-        \ 'javascriptreact': ['react'],
-        \ 'html': ['html', 'svg'],
-        \ 'go' : 'Go',
-        \}
+    let g:dash_map = {
+      \ 'javascript': ['javascript', 'NodeJS'],
+      \ 'javascriptreact': ['react'],
+      \ 'html': ['html', 'svg'],
+      \ 'go' : 'Go',
+      \}
 # }}}
 
 # Find Everythins
 - repo: liuchengxu/vim-clap
-  build: 'sh ./install.sh'
+  build: "sh ./install.sh"
   on_cmd: Clap
   hook_source: source $VIM_PATH/modules/module-clap.vim
 
@@ -110,39 +129,18 @@
 
 # Interface{{{
 - { repo: rhysd/accelerated-jk, on_map: { n: <Plug> } }
-- { repo: haya14busa/vim-asterisk, on_map: { nv: <Plug> }}
+- { repo: haya14busa/vim-asterisk, on_map: { nv: <Plug> } }
 - repo: lambdalisue/suda.vim
   on_event: BufRead
   hook_add: let g:suda_smart_edit = 1
 
 - repo: ludovicchabant/vim-gutentags
   if: executable('ctags')
-  on_event: [ BufReadPost, BufWritePost ]
+  on_event: [BufReadPost, BufWritePost]
   hook_source: source  $VIM_PATH/modules/module-gutentags.vim
 
-- repo: t9md/vim-choosewin
-  on_map: { n: <Plug> }
-  hook_source: source  $VIM_PATH/modules/module-choosewin.vim
-
-- repo: psliwka/vim-smoothie
-  on_func: smoothie#
-  hook_add: |
-    let g:smoothie_no_default_mappings = v:true
-
-- repo: thinca/vim-quickrun
-  on_cmd: QuickRun
-  hook_add: |
-        let g:quickrun_config = {
-            \   "_" : {
-            \       "outputter" : "message",
-            \   },
-            \}
-        let g:quickrun_no_default_key_mappings = 1
-
-- {repo: simnalamburt/vim-mundo , on_map: { n: <Plug> } }
-
 - repo: liuchengxu/vim-which-key
-  on_cmd: [ Whichkey, Whichkey! ]
+  on_cmd: [Whichkey, Whichkey!]
   hook_add: |
     let g:which_key_map =  { 'name' : 'Leader'}
     let g:which_key_localmap =  {'name' : 'LocalLeader'}
@@ -158,11 +156,11 @@
 - repo: easymotion/vim-easymotion
   on_map: { n: <Plug> }
   hook_source: |
-        let g:EasyMotion_do_mapping = 0
-        let g:EasyMotion_prompt = 'Jump to → '
-        let g:EasyMotion_keys = 'fjdkswbeoavn'
-        let g:EasyMotion_smartcase = 1
-        let g:EasyMotion_use_smartsign_us = 1
+    let g:EasyMotion_do_mapping = 0
+    let g:EasyMotion_prompt = 'Jump to → '
+    let g:EasyMotion_keys = 'fjdkswbeoavn'
+    let g:EasyMotion_smartcase = 1
+    let g:EasyMotion_use_smartsign_us = 1
 # }}}
 
 # File manager{{{
@@ -184,7 +182,7 @@
       \ 'Unknown'   : '⁇'
       \ }
 
-- repo: Andrflor/defx-icons
+- repo: kristijanhusak/defx-icons
   on_source: defx.nvim
   hook_add: |
     let g:defx_icons_column_length = 1
@@ -195,37 +193,24 @@
 - repo: tpope/vim-dadbod
 
 - repo: kristijanhusak/vim-dadbod-ui
-  on_cmd: [ DBUIToggle,DBUIAddConnection,DBUI,DBUIFindBuffer,DBUIRenameBuffer ]
+  on_cmd:
+    [DBUIToggle, DBUIAddConnection, DBUI, DBUIFindBuffer, DBUIRenameBuffer]
   on_source: vim-dadbod
   hook_source: source $VIM_PATH/modules/module-dadbod-ui.vim
 # }}}
 
-# Terminal {{{
-- repo: voldikss/vim-floaterm
-  on_cmd: [ FloatermNew,FloatermToggle,FloatermPrev,FloatermNext,FloatermSend ]
-  hook_source: source  $VIM_PATH/modules/module-floaterm.vim
-# }}}
-
-# Version control{{{
-- { repo: jreybert/vimagit, on_cmd: Magit }
-
-- repo: rhysd/committia.vim
-  on_path: [ COMMIT_EDITMSG, MERGE_MSG ]
-  hook_source: let g:committia_min_window_width = 7
-
 - repo: tpope/vim-fugitive
-  on_cmd: [ G, Git, Gfetch, Gpush, Glog, Gclog, Gdiffsplit ]
-  hook_source:
-    augroup user_fugitive_plugin
-      autocmd!
-      autocmd FileType fugitiveblame normal A
+  on_cmd: [G, Git, Gfetch, Gpush, Glog, Gclog, Gdiffsplit]
+  hook_source: augroup user_fugitive_plugin
+    autocmd!
+    autocmd FileType fugitiveblame normal A
     augroup END
 # }}}
 
 # Neovim Lua feature{{{
 - repo: Vigemus/iron.nvim
   if: has('nvim')
-  on_cmd: [ IronRepl, IronReplHere, IronFocus, IronSend, IronWatchCurrentFile ]
+  on_cmd: [IronRepl, IronReplHere, IronFocus, IronSend, IronWatchCurrentFile]
   on_map: { nv: <Plug> }
   on_func: IronUnwatchFile
   hook_add: let g:iron_map_defaults = 0 | let g:iron_map_extended = 0
@@ -233,7 +218,19 @@
 
 - repo: norcalli/nvim-colorizer.lua
   if: has('nvim-0.4')
-  on_ft: [ html,css,sass,scss,stylus,vim,javascript,javascriptreact,typescript,typescriptreact ]
+  on_ft:
+    [
+      html,
+      css,
+      sass,
+      scss,
+      stylus,
+      vim,
+      javascript,
+      javascriptreact,
+      typescript,
+      typescriptreact,
+    ]
   hook_source: luafile $VIM_PATH/modules/module-colorizer.lua
 # }}}
 
@@ -246,12 +243,13 @@
   hook_source: source $VIM_PATH/modules/module-indentline.vim
 
 - repo: liuchengxu/vista.vim
-  on_cmd: [ Vista,Vista!,Vista!! ]
+  on_cmd: [Vista, Vista!, Vista!!]
   hook_source: source  $VIM_PATH/modules/module-vista.vim
 
 - repo: mattn/emmet-vim
   on_event: InsertEnter
-  on_ft: [ html,css,javascript,javascriptreact,vue,typescript,typescriptreact ]
+  on_ft:
+    [html, css, javascript, javascriptreact, vue, typescript, typescriptreact]
   hook_source: |
     let g:user_emmet_complete_tag = 0
     let g:user_emmet_install_global = 0
@@ -289,9 +287,9 @@
 # TextObjectOperator
 - repo: kana/vim-textobj-user
 
-- { repo: terryma/vim-expand-region, on_map: { x: <Plug> }}
+- { repo: terryma/vim-expand-region, on_map: { x: <Plug> } }
 
-- { repo: AndrewRadev/splitjoin.vim, on_map: { n: <Plug>Splitjoin }}
+- { repo: AndrewRadev/splitjoin.vim, on_map: { n: <Plug>Splitjoin } }
 
 - repo: AndrewRadev/dsf.vim
   on_map: { n: <Plug>Dsf }
@@ -306,7 +304,7 @@
 
 - repo: osyo-manga/vim-textobj-multiblock
   on_map: { ox: <Plug> }
-  hook_add:  let g:textobj_multiblock_no_default_key_mappings = 1
+  hook_add: let g:textobj_multiblock_no_default_key_mappings = 1
 
 - repo: kana/vim-textobj-function
   on_map: { ox: <Plug> }
@@ -318,14 +316,14 @@
 
 # Javascript and React support
 # LanguageServerProtocol use coc-tsserver extensions
-- { repo: neoclide/vim-jsx-improve,on_ft: [ javascript,javascriptreact ]}
-- { repo: moll/vim-node, on_ft: [ javascript, javascriptreact ] }
-- { repo: jparise/vim-graphql, on_ft: [ javascript, javascriptreact ] }
+- { repo: neoclide/vim-jsx-improve, on_ft: [javascript, javascriptreact] }
+- { repo: moll/vim-node, on_ft: [javascript, javascriptreact] }
+- { repo: jparise/vim-graphql, on_ft: [javascript, javascriptreact] }
 
 # Typescript and React support
 # LanguageServerProtocol used by coc-tsserver
-- { repo: leafgarland/typescript-vim,on_ft: [ typescript, typescriptreact ]}
-- { repo: peitalin/vim-jsx-typescript,on_ft: [typescriptreact ]}
+- { repo: leafgarland/typescript-vim, on_ft: [typescript, typescriptreact] }
+- { repo: peitalin/vim-jsx-typescript, on_ft: [typescriptreact] }
 
 # json support
 # LanguageServerProtocol for json by thinkvim default
@@ -333,12 +331,12 @@
 
 # Go Debug support
 # LanguageServerProtocol used by gopls
-- { repo : hardcoreplayers/go-nvim,on_ft: [ go ,gomod ]}
-- { repo: sebdah/vim-delve,on_ft: go }
+- { repo: hardcoreplayers/go-nvim, on_ft: [go, gomod] }
+- { repo: sebdah/vim-delve, on_ft: go }
 
 # Rust support
 # LanguageServerProtocol used by coc-rust-analyzer extension
-- { repo: rust-lang/rust.vim,on_ft: rust }
+- { repo: rust-lang/rust.vim, on_ft: rust }
 
 # Kotlin support
 - { repo: Andrflor/kotlin-vim, on_ft: kotlin }
@@ -346,8 +344,18 @@
 # Qml support
 - { repo: peterhoeg/vim-qml, on_ft: qml }
 
+# Qt support
+- { repo: fedorenchik/qt-support.vim, on_ft: [cpp, h, pri, pro, qrc] }
+
 # Java support
 - { repo: artur-shaik/vim-javacomplete2, on_ft: [java, class] }
 
 # Plalenight colorscheme
 - repo: drewtempelmeyer/palenight.vim
+
+# Dart support
+- { repo: dart-lang/dart-vim-plugin, on_ft: [dart, drt] }
+
+# Latex preview
+- { repo: xuhdev/vim-latex-live-preview, on_ft: [tex, latex] }
+

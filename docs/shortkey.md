@@ -248,6 +248,7 @@
 | <kbd>Leader</kbd> + <kbd>oc</kbd> | **N** | Open personal zshrc tmux conf |
 | <kbd>Leader</kbd> + <kbd>os</kbd> | **N** | Open startify dashboard       |
 | <kbd>Leader</kbd> + <kbd>om</kbd> | **N** | Open markdown preview         |
+| <kbd>Leader</kbd> + <kbd>ol</kbd> | **N** | Open latex preview         |
 | <kbd>Leader</kbd> + <kbd>ot</kbd> | **N** | Open terminal                 |
 
 ### PackageManage

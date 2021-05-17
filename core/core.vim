@@ -11,6 +11,8 @@ if &compatible
 	" vint: +ProhibitSetNoCompatible
 endif
 
+set ts=2 expandtab
+
 " Set main configuration directory as parent directory
 let $VIM_PATH = fnamemodify(resolve(expand('<sfile>:p')), ':h:h')
 let $THINKVIM = expand($HOME.'/.config/envyvim')
@@ -47,7 +49,7 @@ if has('vim_starting')
 	" Use spacebar as leader and ; as secondary-leader
 	" Required before loading plugins!
 	let g:mapleader="\<Space>"
-	let g:maplocalleader=';'
+  let g:maplocalleader=','
 
 	" Release keymappings prefixes, evict entirely for use of plug-ins.
 	nnoremap <Space>  <Nop>
@@ -56,6 +58,7 @@ if has('vim_starting')
 	xnoremap ,        <Nop>
 	nnoremap ;        <Nop>
 	xnoremap ;        <Nop>
+	noremap <c-k> <c-i>
 
 endif
 

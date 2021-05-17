@@ -207,6 +207,7 @@ if has('patch-8.1.0360') || has('nvim-0.4')
 	set diffopt+=internal,algorithm:patience
 	" set diffopt=indent-heuristic,algorithm:patience
 endif
+set diffopt+=vertical
 " }}}
 
 " Editor UI {{{

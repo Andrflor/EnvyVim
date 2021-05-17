@@ -55,7 +55,7 @@ augroup end
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "Use tab for trigger completion with characters ahead and navigate
-inoremap <silent><expr> <TAB>
+inoremap <silent><expr> <C-TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
